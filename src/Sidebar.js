@@ -1,14 +1,21 @@
 import React from "react";
 import "./Sidebar.css";
 import { Avatar } from "@mui/material";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 
 function Sidebar() {
+  const user = useSelector(selectUser);
+
   const recentItem = (topic) => (
     <div className="sidebar__recentItem">
       <span className="sidebar__hash">#</span>
       <p>{topic}</p>
     </div>
   );
+
+  const splitName = user.displayName.split(" "),
+    userInitials = splitName[0][0] + splitName[1][0];
 
   return (
     <div className="sidebar">
@@ -17,9 +24,11 @@ function Sidebar() {
           src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
           alt=""
         />
-        <Avatar className="sidebar__avatar" />
-        <h2>Matteo Digiorgio</h2>
-        <h4>matthew.digiorgio@gmail.com</h4>
+        <Avatar src={user.photoURL} className="sidebar__avatar">
+          {userInitials}
+        </Avatar>
+        <h2>{user.displayName}</h2>
+        <h4>{user.email}</h4>
       </div>
 
       <div className="sidebar__stats">
