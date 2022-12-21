@@ -7,14 +7,14 @@ import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 
-const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
+const Post = forwardRef(({ name, description, message, photoURL }, ref) => {
   const splitName = name.split(" "),
     userInitials = splitName[0][0] + splitName[1][0];
 
   return (
     <div ref={ref} className="post">
       <div className="post__header">
-        <Avatar src={photoUrl}>{userInitials}</Avatar>
+        <Avatar src={photoURL}>{userInitials}</Avatar>
         <div className="post__info">
           <h2>{name}</h2>
           <p>{description}</p>

@@ -1,16 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import Login from "./Login";
+import Widgets from "./Widgets";
+import Register from "./Register";
 import { login, logout, selectUser } from "./features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./firebase";
 
 function App() {
   const user = useSelector(selectUser);
+  const [currentForm, setCurrentForm] = useState("login");
   const dispatch = useDispatch();
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+  };
 
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
@@ -33,17 +39,21 @@ function App() {
 
   return (
     <div className="app">
-      {/* HEADER */}
-      <Header />
-
       {!user ? (
-        <Login />
+        currentForm === "login" ? (
+          <Login onFormSwitch={toggleForm} />
+        ) : (
+          <Register onFormSwitch={toggleForm} />
+        )
       ) : (
-        <div className="app__body">
-          <Sidebar />
-          <Feed />
-          {/* WIDGET */}
-        </div>
+        <>
+          <Header />
+          <div className="app__body">
+            <Sidebar />
+            <Feed />
+            <Widgets />
+          </div>
+        </>
       )}
     </div>
   );

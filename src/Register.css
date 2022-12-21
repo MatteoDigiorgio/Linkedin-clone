@@ -1,4 +1,4 @@
-.login {
+.register {
   display: grid;
   place-items: center;
   margin-left: auto;
@@ -7,19 +7,19 @@
   padding-bottom: 100px;
 }
 
-.login > img {
+.register > img {
   object-fit: contain;
   height: 70px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.login > form {
+.register > form {
   display: flex;
   flex-direction: column;
 }
 
-.login > form > input {
+.register > form > input {
   width: 350px;
   height: 50px;
   font-size: 20px;
@@ -28,7 +28,7 @@
   border-radius: 5px;
 }
 
-.login > form > button {
+.register > form > button {
   width: 350px;
   height: 50px;
   font-size: large;
@@ -37,17 +37,17 @@
   border-radius: 25px;
 }
 
-.login > form > button:hover {
+.register > form > button:hover {
   cursor: pointer;
   color: #fff;
   background-color: #006097;
 }
 
-.login__register {
+.register__login {
   color: #0177b7;
   cursor: pointer;
 }
 
-.login > p {
+.register > p {
   margin-top: 20px;
 }
