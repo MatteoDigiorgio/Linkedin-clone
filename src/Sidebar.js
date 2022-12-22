@@ -14,8 +14,11 @@ function Sidebar() {
     </div>
   );
 
-  const splitName = user.displayName.split(" "),
-    userInitials = splitName[0][0] + splitName[1][0];
+  const splitName = user.displayName ? user.displayName.split(" ") : "";
+
+  const userInitials = splitName
+    ? splitName[0][0].concat("", splitName[1][0])
+    : "Y";
 
   return (
     <div className="sidebar">

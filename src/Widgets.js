@@ -21,12 +21,11 @@ function Widgets() {
         <h2>Linkedin News</h2>
         <InfoIcon />
       </div>
-      {newsArticle("This is a Widget", "Subtitle test")}
-      {newsArticle("This is a Widget", "Subtitle test")}
-      {newsArticle("This is a Widget", "Subtitle test")}
-      {newsArticle("This is a Widget", "Subtitle test")}
-      {newsArticle("This is a Widget", "Subtitle test")}
-      {newsArticle("This is a Widget", "Subtitle test")}
+      {newsArticle("Italian salaries down", "1.454 readers")}
+      {newsArticle("The first hybrid train of Trenitalia", "186 readers")}
+      {newsArticle("When we lack expertise", "106 readers")}
+      {newsArticle("POLL: What is your soft skill?", "3.372 readers")}
+      {newsArticle("Rearranged in fuels in Italy", "338 readers")}
     </div>
   );
 }
