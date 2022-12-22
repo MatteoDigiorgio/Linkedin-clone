@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { auth } from "./firebase";
 import "./Login.css";
 import { useDispatch } from "react-redux";
 import { login } from "./features/userSlice";
+import { auth } from "./firebase";
 
 function Login(props) {
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ function Login(props) {
             email: userAuth.user.email,
             uid: userAuth.user.uid,
             displayName: userAuth.user.displayName,
-            profileUrl: userAuth.user.photoURL,
+            photoURL: userAuth.user.photoURL,
           })
         );
       })

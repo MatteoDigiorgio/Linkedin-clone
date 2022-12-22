@@ -6,8 +6,7 @@ import { selectUser } from "./features/userSlice";
 
 function HeaderOption({ avatar, Icon, title, onClick }) {
   const user = useSelector(selectUser);
-
-  const splitName = user ? user.displayName.split(" ") : "";
+  const splitName = user.displayName ? user.displayName.split(" ") : "";
 
   const userInitials = splitName
     ? splitName[0][0].concat("", splitName[1][0])
