@@ -1,3 +1,8 @@
+:root {
+  --blue: #0073b1;
+  --blueHover: #006097;
+}
+
 .app {
   background-color: #f3f2ef;
   min-height: 100vh;

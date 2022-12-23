@@ -19,6 +19,7 @@ function App() {
   };
 
   useEffect(() => {
+    document.title = "Linkedin Clone";
     auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         // user is logged in
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <div className="app">
+      <title>Prova</title>
       {!user ? (
         currentForm === "login" ? (
           <Login onFormSwitch={toggleForm} />
