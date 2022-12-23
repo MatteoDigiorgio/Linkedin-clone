@@ -34,18 +34,18 @@
   font-size: large;
   font-weight: 700;
   color: #fff;
-  background-color: #0073b1;
+  background-color: var(--blue);
   border-radius: 25px;
 }
 
 .login > form > button:hover {
   cursor: pointer;
   color: #fff;
-  background-color: #006097;
+  background-color: var(--blueHover);
 }
 
 .login__register {
-  color: #0177b7;
+  color: var(--blue);
   cursor: pointer;
 }
 
